@@ -1,1 +1,0 @@
-将Oracle软件包（linuxx64_12201_database.zip）放入oracle-ee-12c-base/目录
