@@ -8,7 +8,7 @@ libXtst.i686 libXtst.x86_64 make.x86_64 sysstat.x86_64 && yum clean all
 
 ENV ORACLE_DATABASE_DOWNLOAD_URL https://www.dropbox.com/s/maex8fu98o6j0xj/linuxx64_12201_database.zip?dl=0
 
-COPY linuxx64_12201_database.zip /database.zip
+#COPY linuxx64_12201_database.zip /database.zip
 COPY oracle_12c_install.sh /oracle_12c_install.sh
 COPY oracle-12c-ee.rsp /oracle-12c-ee.rsp
 
