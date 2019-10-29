@@ -18,12 +18,11 @@ mkdir /u01 && chown oracle:dba /u01 && chmod 775 /u01
 
 #Download oracle database zip
 echo "Downloading oracle database zip"
-#wget -q -O /oracle_database.zip "$ORACLE_DATABASE_DOWNLOAD_URL"
-mv /linuxx64_12201_database.zip /oracle_database.zip
+wget -q -O /database.zip "$ORACLE_DATABASE_DOWNLOAD_URL"
 
 echo "Extracting oracle database zip"
-su oracle -c 'unzip -q /oracle_database.zip -d /home/oracle/'
-rm -f /oracle_database.zip
+su oracle -c 'unzip -q /database.zip -d /home/oracle/'
+rm -f /database.zip
 
 #Run installer
 su oracle -c "cd /home/oracle/database && ./runInstaller -ignoresysprereqs -ignoreprereq -showProgress -silent -responseFile $1 -waitForCompletion"
