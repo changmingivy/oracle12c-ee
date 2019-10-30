@@ -16,6 +16,8 @@ echo 'exit 0' > /usr/sbin/sysctl
 groupadd dba && useradd -m -G dba oracle
 mkdir /u01 && chown oracle:dba /u01 && chmod 775 /u01
 
+mv /linuxx64_12201_database.zip /database.zip
+
 echo "Extracting oracle database zip"
 su oracle -c 'unzip -q /database.zip -d /home/oracle/'
 rm -f /database.zip
