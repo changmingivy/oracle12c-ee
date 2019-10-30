@@ -43,7 +43,7 @@ INVENTORY_LOCATION=/u01/app/oraInventory
 #-------------------------------------------------------------------------------
 # Specify the complete path of the Oracle Home. 
 #-------------------------------------------------------------------------------
-ORACLE_HOME=/u01/app/oracle/product/12.2.0/db_1
+ORACLE_HOME=/u01/app/oracle/product/12.2.0/EE
 
 #-------------------------------------------------------------------------------
 # Specify the complete path of the Oracle Base. 
@@ -184,12 +184,12 @@ oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
 #-------------------------------------------------------------------------------
 # Specify the Starter Database Global Database Name. 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.globalDBName=
+oracle.install.db.config.starterdb.globalDBName=orcl
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database SID.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.SID=
+oracle.install.db.config.starterdb.SID=orcl
 
 #-------------------------------------------------------------------------------
 # Specify whether the database should be configured as a Container database.
@@ -215,7 +215,7 @@ oracle.install.db.config.PDBName=
 #  KO16MSWIN949, ZHS16GBK, TH8TISASCII, ZHT32EUC, ZHT16MSWIN950,
 #  ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.characterSet=
+oracle.install.db.config.starterdb.characterSet=AL32UTF8
 
 #------------------------------------------------------------------------------
 # This variable should be set to true if Automatic Memory Management 

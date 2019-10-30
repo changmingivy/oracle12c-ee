@@ -8,7 +8,7 @@ ln -s /u01/app/oracle-product /u01/app/oracle/product
 
 #Run Oracle root scripts
 /u01/app/oraInventory/orainstRoot.sh > /dev/null 2>&1
-echo | /u01/app/oracle/product/12.2.0/db_1/root.sh > /dev/null 2>&1 || true
+echo | /u01/app/oracle/product/12.2.0/EE/root.sh > /dev/null 2>&1 || true
 
 impdp () {
 	set +e
@@ -57,10 +57,10 @@ case "$1" in
 			echo "orcl:$ORACLE_HOME:N" >> /etc/oratab
 			chown oracle:dba /etc/oratab
 			chown 664 /etc/oratab
-			rm -rf /u01/app/oracle-product/12.2.0/db_1/dbs
-			ln -s /u01/app/oracle/dbs /u01/app/oracle-product/12.2.0/db_1/dbs
+			rm -rf /u01/app/oracle-product/12.2.0/EE/dbs
+			ln -s /u01/app/oracle/dbs /u01/app/oracle-product/12.2.0/EE/dbs
 			#Startup Database
-			su oracle -c "/u01/app/oracle/product/12.2.0/db_1/bin/tnslsnr &"
+			su oracle -c "/u01/app/oracle/product/12.2.0/EE/bin/tnslsnr &"
 			su oracle -c 'echo startup\; | $ORACLE_HOME/bin/sqlplus -S / as sysdba'
 		else
 			echo "Database not initialized. Initializing database."
@@ -72,11 +72,11 @@ case "$1" in
 
 			#printf "Setting up:\nprocesses=$processes\nsessions=$sessions\ntransactions=$transactions\n"
 
-			mv /u01/app/oracle-product/12.2.0/db_1/dbs /u01/app/oracle/dbs
-			ln -s /u01/app/oracle/dbs /u01/app/oracle-product/12.2.0/db_1/dbs
+			mv /u01/app/oracle-product/12.2.0/EE/dbs /u01/app/oracle/dbs
+			ln -s /u01/app/oracle/dbs /u01/app/oracle-product/12.2.0/EE/dbs
 
 			echo "Starting tnslsnr"
-			su oracle -c "/u01/app/oracle/product/12.2.0/db_1/bin/tnslsnr &"
+			su oracle -c "/u01/app/oracle/product/12.2.0/EE/bin/tnslsnr &"
 			#create DB for SID: orcl
 			if [ "${MANUAL_DBCA}" == 'true' ]; then
 				echo "Open in Browser http://localhost:6800/vnc_auto.html with password ${VNC_PASSWORD} for future configuration"
